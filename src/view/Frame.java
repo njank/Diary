@@ -2,11 +2,13 @@ package view;
 
 import diary.Controller;
 import diary.Model;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
+import utils.IOUtils;
 
 public abstract class Frame extends JFrame {
     protected Model model;
@@ -21,6 +23,7 @@ public abstract class Frame extends JFrame {
         
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        this.setIconImage(IOUtils.readImage("icon.png").getImage());
         
         this.initLookAndFeel();
         this.initPanel();
