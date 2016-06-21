@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Projects/Java/Diary/src/view/MainFrame.java</file>
-            <file>file:/D:/Projects/Java/Diary/src/view/Frame.java</file>
-            <file>file:/D:/Projects/Java/Diary/src/diary/Main.java</file>
-            <file>file:/D:/Projects/Java/Diary/src/view/LoginFrame.java</file>
-            <file>file:/D:/Projects/Java/Diary/src/diary/User.java</file>
+            <file>file:/D:/Projects/Java/Diary/src/diary/Log.java</file>
+            <file>file:/D:/Projects/Java/Diary/src/diary/Controller.java</file>
+            <file>file:/D:/Projects/Java/Diary/src/diary/Model.java</file>
         </group>
     </open-files>
 </project-private>

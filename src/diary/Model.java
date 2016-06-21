@@ -21,9 +21,6 @@ public class Model {
     public Model() {
         controller = new Controller(this);
         loginFrame = new LoginFrame(this);
-        
-        
-        
     }
 
     public void login(String username, String password) {
@@ -86,13 +83,26 @@ public class Model {
     }
     
     public void editEntry(){
-        if(mainFrame.table.getSelectedRow() != -1)
-            editEntry(mainFrame.table.convertRowIndexToModel(mainFrame.table.getSelectedRow()));
+        if(mainFrame.table.getSelectedRow() != -1){
+            int firstSelected = mainFrame.table.getSelectedRow(); // if multiple rows have been selected, select and edit first
+            mainFrame.table.setRowSelectionInterval(firstSelected,firstSelected);
+            editEntry(mainFrame.table.convertRowIndexToModel(firstSelected));
+        }
     }
     
     public void deleteEntry(int row){
         log.deleteEntry(row);
         mainFrame.refreshTable();
+        
+        // if last row deleted select the one before
+        int rowCount = log.getRowCount();
+        if(row >= rowCount)
+          row = rowCount-1;
+        
+        // only mark row at least one row is available
+        if(row > 0)
+          mainFrame.table.setRowSelectionInterval(row%log.getRowCount(),row%log.getRowCount());
+        
         saveLog(true);
     }
 
